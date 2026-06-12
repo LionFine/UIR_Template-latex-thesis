@@ -1,0 +1,115 @@
+\title{Разработка прототипа вопросно-ответного ассистента\\
+  на основе Retrieval-Augmented Generation\\}
+
+\taskdate{28.02.2026}
+
+\projecttasks{%
+  \projecttask{\bfseries\projecttasknum}{\bfseries Аналитическая часть}{}{}{}%
+  \projecttask{\projectsubtasknum}%
+  {Анализ проблемы поиска информации в корпоративной базе знаний.}%
+  {Аналитический отчет}%
+  {02.03.2026}{}%
+  \projecttask{\projectsubtasknum}%
+  {Обзор подходов к построению вопросно-ответных систем.}%
+  {}%
+  {06.03.2026}{}%
+  \projecttask{\projectsubtasknum}%
+  {Обоснование выбора Retrieval-Augmented Generation для первой MVP-версии.}%
+  {Текст РСПЗ}%
+  {10.03.2026}{}%
+  \projecttask{\bfseries\projecttasknum}{\bfseries Теоретическая часть}{}{}{}%
+  \projecttask{\projectsubtasknum}%
+  {Рассмотрение основ больших языковых моделей.}%
+  {}%
+  {16.03.2026}{}%
+  \projecttask{\projectsubtasknum}%
+  {Рассмотрение векторного представления текста и векторного поиска.}%
+  {}%
+  {20.03.2026}{}%
+  \projecttask{\projectsubtasknum}%
+  {Описание базовой технологии Retrieval-Augmented Generation.}%
+  {Алгоритм}%
+  {24.03.2026}{}%
+  \projecttask{\bfseries\projecttasknum}{\bfseries Инженерная часть}{}{}{}%
+  \projecttask{\projectsubtasknum}%
+  {Проектирование базового RAG-пайплайна.}%
+  {}%
+  {30.03.2026}{}%
+  \projecttask{\projectsubtasknum}%
+  {Проектирование архитектуры обработки документов.}%
+  {}%
+  {03.04.2026}{}%
+  \projecttask{\projectsubtasknum}%
+  {Проектирование архитектуры поиска и генерации ответа.}%
+  {Диаграммы, схемы}%
+  {10.04.2026}{}%
+  \projecttask{\bfseries\projecttasknum}{\bfseries Технологическая и
+    практическая часть}{}{}{}%
+  \projecttask{\projectsubtasknum}%
+  {Подготовка корпуса документов.}%
+  {Отчеты JSON/JSONL, таблицы ПЗ}%
+  {17.04.2026}{}%
+  \projecttask{\projectsubtasknum}%
+  {Реализация парсинга, чанкинга и индексации.}%
+  {Исполняемые файлы}%
+  {24.04.2026}{}%
+  \projecttask{\projectsubtasknum}%
+  {Реализация базового сценария вопрос-ответ и первичная проверка работоспособности.}%
+  {Отчет проверки}%
+  {30.04.2026}{}%
+  \projecttask{\projectsubtasknum}%
+  {Оформление ограничений MVP и направлений дальнейшего развития.}%
+  {Текст ПЗ}%
+  {05.05.2026}{}%
+  \projecttask{\bfseries\projecttasknum}%
+  {\bfseries Оформление пояснительной записки (ПЗ) и иллюстративного материала
+    для доклада.}%
+  {\bfseries Текст ПЗ, презентация}%
+  {\bfseries 10.05.2026}{} }
+
+\taskliterature{
+\nocite{Lewis2020RAG}
+\nocite{Vaswani2017Attention}
+\nocite{Karpukhin2020DPR}
+\nocite{Reimers2019SentenceBERT}
+\nocite{QdrantDocs}
+\nocite{SentenceTransformersDocs}
+}
+
+% # Подписи
+
+% Для простановки подписи используются слдеющие команды:
+% - простая подпись: \sign[<сдвиг>]{<масштаб>}{<FIO>}
+% - подпись с датой: \signat[<сдвиг>]{<масштаб>}{<FIO>}{<дата>}
+% где
+% - <сдвиг> — необязательный сдвиг подписи по вертикали для правильного
+%   расположения относительно строки
+% - <масштаб> — число, используемое для масштарибования изображения подписи
+% - <FIO> — имя файла с подписью, файл должен быть помещен в
+%   img/signatures/FIO.png и иметь прозрачный фон
+% - <дата> — дата, которая будет выведена под подписью
+
+% ## Утверждение задания руководителем и студентом
+\authortaskapproval{}%
+\supervisortaskapproval{}%
+
+% ## Утверждение РСПЗ руководителем, студентом и консультантом
+\authorrspzapproval{}%
+\supervisorrspzapproval{}%
+\consultantrspzapproval{}%
+
+% ## Оценка руководителя за РСПЗ
+\supervisorrspzgrade{}%
+
+% ## Утверждение ПЗ руководителем, студентом и консультантом
+\authorpzapproval{}%
+\supervisorpzapproval{}%
+\consultantpzapproval{}%
+
+% ## Оценка руководителя за ПЗ
+\supervisorpzgrade{}%
+
+%%% Local Variables:
+%%% TeX-engine: xetex
+%%% eval: (setq-local TeX-master (concat "../" (seq-find (-cut string-match ".*-1-task\.tex$" <>) (directory-files ".."))))
+%%% End:

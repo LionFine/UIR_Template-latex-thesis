@@ -1,0 +1,28 @@
+\chapter{Команды воспроизведения MVP}
+\label{appendix:runbook}
+
+Ниже приведен минимальный порядок запуска базового сценария. Предполагается, что зависимости Python установлены, Qdrant доступен по адресу \texttt{http://localhost:6333}, а локальная LLM доступна через OpenAI-compatible endpoint.
+
+\begin{lstlisting}[language=bash,caption={Запуск Qdrant}]
+docker compose up -d qdrant
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash,caption={Подготовка корпуса и индекса}]
+python scripts/generate_documents_registry.py
+python scripts/parse_documents.py
+python scripts/validate_parsed_corpus.py
+python scripts/chunk_documents.py
+python scripts/embed_chunks.py
+python scripts/index_qdrant.py
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash,caption={Проверка поиска и генерации ответа}]
+python scripts/search_qdrant.py "какие требования к Wi-Fi сети?" --top-k 3
+python scripts/answer_question.py "какие требования к Wi-Fi сети?" --embedding-device cpu
+\end{lstlisting}
+
+Для первой MVP-версии центральным является dense search по Qdrant. Дополнительные режимы поиска и повторного ранжирования не включаются в основной сценарий данной записки.
+
+%%% Local Variables:
+%%% TeX-engine: xetex
+%%% End:

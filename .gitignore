@@ -1,0 +1,13 @@
+# Generated LaTeX output for the working thesis
+/thesis/build/
+/thesis/out/
+
+# Editor and operating-system files
+.idea/
+.vscode/
+*.sublime-workspace
+Thumbs.db
+.DS_Store
+
+# Nested repository metadata must not be committed
+**/.git/

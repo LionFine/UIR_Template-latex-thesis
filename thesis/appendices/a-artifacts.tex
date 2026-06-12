@@ -1,0 +1,50 @@
+\chapter{Структура проекта и артефактов}
+\label{appendix:artifacts}
+
+В приложении приведен пример структуры файлов, используемой в MVP-пайплайне. Она отражает путь от исходных документов до векторного индекса и отчетов.
+
+\begin{lstlisting}[language=bash,caption={Основные каталоги и артефакты MVP}]
+data/
+  raw/                         # исходные DOCX, PDF, XLSX
+  registry/
+    documents_registry.csv     # реестр документов
+  parsed/
+    documents.jsonl            # parsed-корпус
+  processed/
+    chunks.jsonl               # чанки
+    chunk_embeddings.npy       # матрица embeddings
+    chunk_embeddings_manifest.jsonl
+  reports/
+    parsing/parse_report.json
+    parsing/parsed_corpus_validation.json
+    chunking/chunking_report.json
+    embeddings/embedding_report.json
+    indexing/qdrant_index_report.json
+    retrieval/retrieval_eval_report.json
+  eval/
+    retrieval_questions.jsonl
+    rag_questions.jsonl
+
+scripts/
+  generate_documents_registry.py
+  parse_documents.py
+  validate_parsed_corpus.py
+  chunk_documents.py
+  embed_chunks.py
+  index_qdrant.py
+  search_qdrant.py
+  answer_question.py
+
+src/robymaxrag/
+  parsing/
+  chunking/
+  embeddings/
+  retrieval/
+  generation/
+\end{lstlisting}
+
+Такая структура позволяет воспроизводить каждый этап отдельно и использовать отчеты для контроля качества преобразования данных.
+
+%%% Local Variables:
+%%% TeX-engine: xetex
+%%% End:

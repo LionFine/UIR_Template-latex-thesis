@@ -1,0 +1,57 @@
+\chapter{Примеры структур данных}
+\label{appendix:examples}
+
+В приложении приведены сокращенные примеры структур данных, используемых в MVP. Они демонстрируют связь между чанком, результатом поиска, prompt и ответом с источниками.
+
+\begin{lstlisting}[caption={Пример JSONL-записи чанка}]
+{
+  "chunk_id": "technical_008::chunk_0004",
+  "doc_id": "technical_008",
+  "title": "Требования к сети Wi-Fi и IT-интеграции",
+  "category": "technical",
+  "source_path": "data/raw/02_Технические документы/...",
+  "heading_path": ["Требования к Wi-Fi"],
+  "text": "Фрагмент документа с требованиями к покрытию сети..."
+}
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Пример результата dense retrieval}]
+{
+  "rank": 1,
+  "chunk_id": "technical_008::chunk_0004",
+  "score": 0.8123,
+  "title": "Требования к сети Wi-Fi и IT-интеграции",
+  "category": "technical"
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash,caption={Схема prompt для генерации ответа}]
+Вопрос пользователя:
+<вопрос>
+
+Контекст из базы знаний:
+[Источник 1]
+chunk_id: <chunk_id>
+title: <title>
+text:
+<текст фрагмента>
+
+Сформируй ответ по вопросу пользователя.
+Используй только предоставленный контекст.
+В конце добавь раздел "Источники" со списком chunk_id.
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash,caption={Схема ответа с источниками}]
+Ответ:
+<краткий ответ на русском языке по найденному контексту>
+
+Источники:
+- technical_008::chunk_0004
+- technical_007::chunk_0002
+\end{lstlisting}
+
+Приведенные примеры являются сокращенными и предназначены для пояснения структуры данных. Реальные записи могут содержать дополнительные metadata: диапазоны страниц, листы XLSX, номера строк, block identifiers и служебные поля отчетов.
+
+%%% Local Variables:
+%%% TeX-engine: xetex
+%%% End:
